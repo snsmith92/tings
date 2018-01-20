@@ -1,0 +1,16 @@
+<div class="ad-box col-10 offset-1">
+  <h1>Create A New Ad</h1>
+
+  <%= simple_form_for @ad, url: ads_path do |f| %>
+    <%= f.input :title, placeholder: "Honda Civic 2007" %>
+    <%= f.input :cost, label: "Price", placeholder: "$"%>
+    <%= f.input :description %>
+    <%= f.input :quantity %>
+    <%= f.input :phone, label: "Phone Number", placeholder:"242-555-5555" %>
+    <%= f.input :email, label: "Email Address", placeholder: "me@tingsbahamas.com" %>
+    <%= f.input :accepted, label: "By clicking this checkbox, I agree to the Terms and Conditions." %>
+    <br />
+    <%= f.submit "Post Ad", class: 'btn btn-primary' %>
+    <br />
+  <% end %>
+</div>
