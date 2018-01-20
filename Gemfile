@@ -62,3 +62,6 @@ end
 
 # Add font-awesome gem
 gem "font-awesome-rails"
+
+# Add simple form gem
+gem 'simple_form'
