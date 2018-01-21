@@ -1,5 +1,6 @@
 class AdsController < ApplicationController
-
+  before_action :authenticate_user!, only: [:new, :create]
+  
   def index
     @ads = Ad.all
   end 

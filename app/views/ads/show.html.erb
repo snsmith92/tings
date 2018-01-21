@@ -1,3 +1,51 @@
-<div class = "ad-page">
-  <h1> This is an ad </h1>
-</div>
+<main class="container product-container">
+  <div class="row">
+    <div class="col-sm-12 col-lg-8">
+      <%= image_tag 'bike.jpg', class: 'ad-img' %>
+    </div>
+    <div class="col-sm-12 col-lg-4">
+      <div class = "product-description">
+        <span><%= link_to "Category", '#' %></span>
+      </div>
+      <!-- Product Pricing -->
+      <div class="product-price">
+        <span>$<%= @ad.cost %></span>
+        <%= link_to "Save Ad", '#', class: 'save-btn' %>
+      </div> 
+
+      <!-- Product Description -->
+      <div class="product-description">
+        <h1><%= @ad.title %></h1>
+        <p><%= @ad.description %></p>
+      </div>
+  
+      <!-- Product Configuration -->
+      <div class="product-configuration">
+  
+        <!-- Product Color -->
+        <div class="seller-info">
+          <span><strong>Seller Info</strong></span>
+          <br />
+          <p>Seller: <%= @ad.user.email %></p>
+          <p>Member Since: <%= @ad.user.created_at.strftime("%d %b, %y")%></p>
+          <p>Active Ads: 4 </p>
+        </div>
+  
+        <!-- Cable Configuration -->
+        <div class="seller-contact">
+          <span>Contact Information</span>
+  
+          <div class="seller-contact-info">
+            <% if @ad.email.present? %>
+              <button>Show Email</button>
+            <% end %>
+            <% if @ad.phone.present? %>
+              <button>Show Phone Number</button>
+            <% end %>
+          </div>
+          <%= link_to 'How to buy safely', '#' %>
+        </div>
+      </div>    
+    </div>
+  </div>
+</main>
