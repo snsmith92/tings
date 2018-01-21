@@ -10,7 +10,7 @@
       <!-- Product Pricing -->
       <div class="product-price">
         <span>$<%= @ad.cost %></span>
-        <%= link_to "Save Ad", '#', class: 'save-btn' %>
+        <%= link_to "Add to Favourites", '#', class: 'save-btn' %>
       </div> 
 
       <!-- Product Description -->
@@ -33,15 +33,21 @@
   
         <!-- Cable Configuration -->
         <div class="seller-contact">
-          <span>Contact Information</span>
+          <span><strong>Contact Information</strong></span>
   
           <div class="seller-contact-info">
             <% if @ad.email.present? %>
-              <button>Show Email</button>
+              <span id= "email-target">
+                <button>Show Email</button>
+              </span>
             <% end %>
             <% if @ad.phone.present? %>
-              <button>Show Phone Number</button>
+              <span id="phone-target">
+                <button>Show Phone Number</button>
+              </span>
             <% end %>
+            <p id="email"><%= @ad.email %></p>
+            <p id="phone"><%= @ad.phone %></p>
           </div>
           <%= link_to 'How to buy safely', '#' %>
         </div>
@@ -49,3 +55,15 @@
     </div>
   </div>
 </main>
+
+<script>
+$(document).ready(function(){
+  $( "#email-target" ).click(function() {
+    $("#email").slideToggle();
+  });
+  $( "#phone-target" ).click(function() {
+    $("#phone").slideToggle();
+  });
+});
+  
+</script>
