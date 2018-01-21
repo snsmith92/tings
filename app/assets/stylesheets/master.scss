@@ -3128,6 +3128,7 @@ output {
   height: 34px;
   padding: 6px 12px;
   font-size: 14px;
+  margin-top: 5px;
   line-height: 1.42857143;
   color: #555;
   background-color: #fff;
@@ -7073,12 +7074,12 @@ button.close {
   bottom: 0;
   left: 0;
   z-index: 1040;
-  background-color: #000
+  background-color: #000;
 }
 
 .modal-backdrop.fade {
   filter: alpha(opacity=0);
-  opacity: 0
+  opacity: 0.5 !important;
 }
 
 .modal-backdrop.in {
