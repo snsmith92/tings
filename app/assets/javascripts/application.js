@@ -17,3 +17,8 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require_tree .
+//= require bootstrap.min
+//= require cable
+//= require custom
+//= require jquery.easing.min
+//= require jquery.min

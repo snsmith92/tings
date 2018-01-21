@@ -1,57 +1,83 @@
-<div class = "hero">
-  <br />
-  <br />
-  <br />
-  <div class="frosty col-10 offset-1 text-center">
-    <h1> Tings Bahamas </h1>
-    <br />
-    <h2>Your one-stop online nationwide classifieds.</h2>
-    <br />
-    <form class="form-inline col-10 offset-1">
-        <input class="form-control form-control-lg col-6" type="text" placeholder="Honda Civic">
-        &nbsp;
-        <select class="form-control form-control-lg col-2" id="categorySelect">
-          <option></option>
-          <option></option>
-          <option></option>
-          <option></option>
-          <option></option>
-        </select>
-        &nbsp;
-        <select class="form-control form-control-lg col-2" id="categorySelect">
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-          </select>
-        &nbsp;
-        <button class="btn btn-lg btn-primary" type="submit">Search</button>
-    </form>
+
+  <!--Banner-->
+  <div class="banner">
+    <div class="bg-color">
+      <div class="container">
+        <div class="banner-text text-center">
+          <div class="text-border">
+            <h2 class="text-dec">Your online classifieds.</h2>
+          </div>
+          <div class="intro-para quote">
+            <p class="big-text">Have something to sell? Looking for something to buy?</p>
+            <form class="form-inline justify-content-center">
+              <input class="form-control form-control-lg col-4" type="text" placeholder="e.g. Honda Civic">
+              &nbsp;
+              <select class="form-control form-control-lg col-2" id="categorySelect">
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+              </select>
+              &nbsp;
+              <select class="form-control form-control-lg col-2" id="categorySelect">
+                  <option></option>
+                  <option></option>
+                  <option></option>
+                  <option></option>
+                  <option></option>
+                </select>
+            </form>
+            <button class="btn" type="submit">SEARCH</button>
+            <h5><%= link_to "Advanced Search", '#'%></h5>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<br />
-<h2 class="text-center">Commonly Searched Items </h2>
-<br />
-<div class="row text-center">
-  <div class="home-category col-12 col-sm-3">
-    <h3>Cars</h3>
-    <br />
-    <i class="fa fa-car fa-5x" aria-hidden="true"></i>
-  </div>
-  <div class="home-category col-12 col-sm-3">
-    <h3>Electronics</h3>
-    <br />
-    <i class="fa fa-television fa-5x" aria-hidden="true"></i>
-  </div>
-  <div class="home-category col-12 col-sm-3">
-    <h3>Property</h3>
-    <br />
-    <i class="fa fa-home fa-5x" aria-hidden="true"></i> 
-  </div>
-  <div class="home-category col-12 col-sm-3">
-    <h3>Services</h3>
-    <br />
-    <i class="fa fa-user fa-5x" aria-hidden="true"></i>
-  </div>
-</div>
+  <!--/ Banner-->
+  
+  <!--work-shop-->
+  <section id="work-shop" class="section-padding">
+    <div class="container">
+      <div class="header-section text-center">
+        <h2>Commonly Searched Items</h2>
+        <p>Quickly browse the most commonly search items.</p>
+        <hr class="bottom-line">
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <div class="service-box text-center">
+            <div class="icon-box">
+              <i class="fa fa-car color-green"></i>
+            </div>
+            <div class="icon-text">
+              <h4 class="ser-text">Cars</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="service-box text-center">
+            <div class="icon-box">
+              <i class="fa fa-television color-green"></i>
+            </div>
+            <div class="icon-text">
+              <h4 class="ser-text">Electronics</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="service-box text-center">
+            <div class="icon-box">
+              <i class="fa fa-home color-green"></i>
+            </div>
+            <div class="icon-text">
+              <h4 class="ser-text">Property & Rentals</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--/ work-shop-->

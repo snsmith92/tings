@@ -1,6 +1,10 @@
 class AdsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @ads = Ad.all
+  end 
+
   def new
     @ad = Ad.new
   end 
@@ -17,6 +21,6 @@ class AdsController < ApplicationController
   private
 
   def ad_params
-    params.require(:ad).permit(:title, :price, :description, :quantity, :phone, :email, :accepted)
+    params.require(:ad).permit(:title, :cost, :description, :quantity, :phone, :email, :accepted)
   end 
 end

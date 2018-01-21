@@ -4,46 +4,83 @@
     <title>Tings Bahamas</title>
     <%= csrf_meta_tags %>
 
+    <%= stylesheet_link_tag :all %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div id="flex-content-container">
-      <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <%= link_to 'Tings Bahamas', root_path, class: 'navbar-brand'%>
-
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">View Listings <span class="sr-only">(current)</span></a>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to root_path do %>
+          <h2 class="navbar-brand">TINGS<span>BAHAMAS</span></h2>
+          <% end %>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= link_to "View Listings", ads_path %>
             </li>
-            <li class="nav-item active">
-              <%= link_to "Post An Ad", new_ad_path, class: "nav-link"%>
+            <li>
+              <%= link_to "Post An Ad", new_ad_path  %>
             </li>
-          </ul>
-          <ul class="navbar-nav">
             <% if user_signed_in? %>
-              <li class="nav-item">
-                <span class = "navbar-text"><i>You're signed in as <%= current_user.email %> &nbsp;&nbsp; </i></span>
-              </li>
-              <li class="nav-item">
-                <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-danger'%>
+              <li class="dropdown">
+                <%= link_to "Your Account", '#', class: "dropdown-toggle", data: {toggle: "dropdown" } %>
+                <ul class="dropdown-menu">
+                  <li><%= link_to 'Profile', '#' %></li>
+                  <li><%= link_to 'Favourites', '#' %></li>
+                  <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+                </ul>
               </li>
             <% else %>
-              <li class="nav-item">
-                <%= link_to "Log In", new_user_session_path, class: 'nav-link' %>
+              <li>
+                <%= link_to 'Log In', '#', data: {toggle: 'modal', target: '#exampleModal'} %>
               </li>
-              <li class="nav-item">
-                <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
-              </li>
+              <li class="btn-go"> 
+                <%= link_to 'SIGN UP', '#', data: {toggle: 'modal', target: '#signup'} %>
+              </li> 
             <% end %>
           </ul>
         </div>
-      </nav> 
+      </div>
+    </nav>
+    <!--/ Navigation bar-->
+
+    <!--Modal box-->
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--/ Modal box-->
 
       <% if notice.present? %>
         <p class="notice"><%= notice %></p>
@@ -55,12 +92,19 @@
       <%= yield %>
     </div>
 
-    <div id="footer">
-      <div class="container">
-        <b>Footer Here</b>
-        <br />
-        <%= link_to 'Link', '#' %>
-      </div>
+<!--Footer-->
+  <footer id="footer" class="footer">
+    <div class="container text-center">
+      <ul class="social-links">
+        <li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-google-plus fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-dribbble fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
+      </ul>
+      ©2018 Tings Bahamas. All rights reserved.
+      
     </div>
+  </footer>
   </body>
 </html>
