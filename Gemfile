@@ -69,7 +69,7 @@ gem 'simple_form'
 # Add devise gem
 gem 'devise'
 
-# Add rspect for automated testing
+# Add rspec for automated testing
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
 end
