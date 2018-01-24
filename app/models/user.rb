@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :ads
+  validates :first_name, presence: :true
+  validates :last_name, presence: :true 
   validates :username, presence: :true, uniqueness: { case_sensitive: false }
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
   validate :validate_username
