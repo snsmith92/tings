@@ -26,16 +26,7 @@ RSpec.describe AdsController, type: :controller do
 
   describe "ads#create action" do
     it "should require users to be logged in" do
-      post :create, params: { ad: {
-      title: "Car for sale",
-      cost: "3000.00",
-      description: "I have for sale a very clean great running 2006 Buick Lucerne for sale. 
-      This vehicle is in great shape inside and out. All power, tinted windows, 
-      and 3800 motor. No issues at all, clean title.",
-      quantity: "1",
-      phone: "2425350365",
-      email: "factory@ruby.org",
-      accepted: true  } }
+      post :create, params: { ad: FactoryBot.attributes_for(:ad) }
       expect(response).to redirect_to new_user_session_path
     end 
 
@@ -47,8 +38,34 @@ RSpec.describe AdsController, type: :controller do
     end
 
     it "should properly deal with validation errors" do
+      user = FactoryBot.create(:user)
+      sign_in user
+      post :create, params: { ad: {
+        title: "",
+        cost: "",
+        description: "",
+        quantity: "",
+        phone: "",
+        email: "",
+        accepted: nil  } }
 
+      expect(response).to have_http_status(:unprocessable_entity)
+      expect(Ad.count).to eq 0
     end 
+  end
+  
+  describe "ads#show action" do
+    it "should successfully show the page if the ad is found" do
+      ad = FactoryBot.create(:ad)
+      get :show, params: { id: ad.id }
+      expect(response).to have_http_status(:success)
+    end 
+
+    it "should return 404 error if the gram is not found" do 
+      get :show, params: { id: "fakeid"}
+      expect(response).to have_http_status(:not_found)
+    end 
+
   end 
   
 end

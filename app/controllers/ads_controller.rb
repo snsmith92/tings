@@ -11,11 +11,18 @@ class AdsController < ApplicationController
 
   def create
     @ad = current_user.ads.create(ad_params)
-    redirect_to ad_path(@ad)
+    if @ad.valid?
+      redirect_to ad_path(@ad)
+    else
+      render :new, status: :unprocessable_entity
+    end 
   end 
 
   def show
-    @ad = Ad.find(params[:id])
+    @ad = Ad.find_by_id(params[:id])
+    if @ad.blank?
+      render plain: "Sorry folks -- no ad to see here!", status: :not_found
+    end 
   end
 
   private
