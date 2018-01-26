@@ -1,83 +1,123 @@
- <!--Banner-->
-  <div class="banner">
-    <div class="bg-color">
-      <div class="container">
-        <div class="banner-text text-center">
-          <div class="text-border">
-            <h2 class="text-dec">Your online classifieds.</h2>
-          </div>
-          <div class="intro-para quote">
-            <p class="big-text">Have something to sell? Looking for something to buy?</p>
-            <form class="form-inline justify-content-center">
-              <input class="form-control form-control-lg col-4" type="text" placeholder="e.g. Honda Civic">
-              &nbsp;
-              <select class="form-control form-control-lg col-2" id="categorySelect">
-                <option></option>
-                <option></option>
-                <option></option>
-                <option></option>
-                <option></option>
-              </select>
-              &nbsp;
-              <select class="form-control form-control-lg col-2" id="categorySelect">
-                  <option></option>
-                  <option></option>
-                  <option></option>
-                  <option></option>
-                  <option></option>
-                </select>
-            </form>
-            <button class="btn" type="submit">SEARCH</button>
-            <h5><%= link_to "Advanced Search", '#'%></h5>
-          </div>
+<div id="intro">
+  <div class="row">
+    <div class="large-6 medium-6 columns">
+      <h3 class="color-white">Your Online Classifieds</h3>
+      <h6 class="color-white" style="line-height: 27px;">TingsBahamas provides a web platform for buying and selling goods and services across the Bahamas. It is the only online seller platform designed for the Bahamas!</h6>
+      <a href="#" class="button large hollow">Sign Up</a>
+    </div>
+    <div class="large-6 medium-6 columns">
+      <div id="sign-up">
+        <h4 class="color-pink">Your next find is a search away!</h4>
+        <hr />
+        <label>Search for: </label>
+        <input id="Text1" type="search" />
+        <label>Category: </label>
+        <input id="Text2" type="text" />
+        <button class="blue-btn">Start Search</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="features">
+  <h2 class="text-center color-pink headings">Commonly Searched Items</h2>
+  <div class="row">
+    <div class="large-3 medium-6 small-12 columns">
+      <div class="featured-item text-center">
+        <i class="fa fa-car fa-3x"></i>
+        <h6>Cars</h6>
+        <div>
+          Used cars, car parts and accessories. 
+        </div>
+      </div>
+    </div>
+    <div class="large-3 medium-6 small-12 columns">
+      <div class="featured-item text-center">
+        <i class="fa fa-television fa-3x"></i>
+        <h6>Electronics</h6>
+        <div>
+          Phones, computers, televisions, etc.
+        </div>
+      </div>
+    </div>
+    <div class="large-3 medium-6 small-12 columns">
+      <div class="featured-item text-center">
+        <i class="fa fa-home fa-3x"></i>
+        <h6>Property &amp; Rentals </h6>
+        <div>
+          Rentals, homes and land for sale. 
+        </div>
+      </div>
+    </div>
+    <div class="large-3 medium-6 small-12 columns">
+      <div class="featured-item text-center">
+        <i class="fa fa-handshake-o fa-3x"></i>
+        <h6>Services</h6>
+        <div>
+          Services provided in a variety of industries.
         </div>
       </div>
     </div>
   </div>
-  <!--/ Banner-->
+</div>
 
- 
-  <!--work-shop-->
-  <section id="work-shop" class="section-padding">
-    <div class="container">
-      <div class="header-section text-center">
-        <h2>Commonly Searched Items</h2>
-        <p>Quickly browse the most commonly search items.</p>
-        <hr class="bottom-line">
-      </div>
-      <div class="row">
-        <div class="col-md-4 col-sm-6">
-          <div class="service-box text-center">
-            <div class="icon-box">
-              <i class="fa fa-car color-green"></i>
-            </div>
-            <div class="icon-text">
-              <h4 class="ser-text">Cars</h4>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-          <div class="service-box text-center">
-            <div class="icon-box">
-              <i class="fa fa-television color-green"></i>
-            </div>
-            <div class="icon-text">
-              <h4 class="ser-text">Electronics</h4>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-          <div class="service-box text-center">
-            <div class="icon-box">
-              <i class="fa fa-home color-green"></i>
-            </div>
-            <div class="icon-text">
-              <h4 class="ser-text">Property & Rentals</h4>
-            </div>
-          </div>
+<div id="why">
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="text-center color-pink headings">Why Use TingsBahamas?</h2>
+    </div>
+    <div class="large-4 columns" style="padding: 0px;">
+      <div class="why-item border-right border-bottom">
+        <div class="glyph-icon flaticon-book53"></div>
+        <h4>Safe, Online Community</h4>
+        <div>
+          TingsBahamas is an online community powered by Bahamians to provide a safe, accessible way to sell your goods and services.
         </div>
       </div>
     </div>
-  </section>
-
-  <!--/ work-shop-->
+    <div class="large-4 columns" style="padding: 0px;">
+      <div class="why-item  border-right border-bottom">
+        <div class="glyph-icon flaticon-boat5"></div>
+        <h4>Fast Search</h4>
+        <div>
+          With goods and services classified in 12+ categories, it's easier than ever to find exactly what you are looking for.
+        </div>
+      </div>
+    </div>
+    <div class="large-4 columns" style="padding: 0px;">
+      <div class="why-item border-bottom ">
+        <div class="glyph-icon flaticon-battery45"></div>
+        <h4>Follow a Search</h4>
+        <div>
+          Looking for a microwave? Perhaps a car? Click 'follow' on your search to be notified as soon as someone posts an item you are looking for.
+        </div>
+      </div>
+    </div>
+    <div class="large-4 columns" style="padding: 0px;">
+      <div class="why-item border-right ">
+        <div class="glyph-icon flaticon-bag10"></div>
+        <h4>Save Favourites</h4>
+        <div>
+          See something you like? Save it for later! Save an ad to your Favourites List to access it quickly later on. 
+        </div>
+      </div>
+    </div>
+    <div class="large-4 columns" style="padding: 0px;">
+      <div class="why-item  border-right ">
+        <div class="glyph-icon flaticon-backpack1"></div>
+        <h4>Seller Histories</h4>
+        <div>
+          Sellers who sell on TingsBahamas can maintain their seller history, adding to the trustworthiness of every sale.
+        </div>
+      </div>
+    </div>
+    <div class="large-4 columns" style="padding: 0px;">
+      <div class="why-item">
+        <div class="glyph-icon flaticon-ball8"></div>
+        <h4>Find your customer - fast!</h4>
+        <div>
+          With all of our features, your customers can find you quicker and easier than anywhere else on the web!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

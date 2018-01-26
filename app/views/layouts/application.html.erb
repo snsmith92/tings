@@ -1,163 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Tings Bahamas</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Tings Bahamas" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <!--Navigation bar-->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <%= link_to root_path do %>
-          <h2 class="navbar-brand">TINGS<span>BAHAMAS</span></h2>
-          <% end %>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <%= link_to "View Listings", ads_path %>
-            </li>
-            <li>
-              <%= link_to "Post An Ad", new_ad_path  %>
-            </li>
+    <div class="fixed">  
+      <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <h1><%= link_to 'Tings Bahamas', root_path %> </h1>
+          </li>
+          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a><span></span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li> <%= link_to 'View Listings', ads_path %></li>
+            <li> <%= link_to 'Post An Ad', new_ad_path  %></li>
+          </ul>
+          <!-- Right Nav Section -->
+          <ul class="right">
             <% if user_signed_in? %>
-              <li class="dropdown">
-                <%= link_to "Your Account", '#', class: "dropdown-toggle", data: {toggle: "dropdown" } %>
-                <ul class="dropdown-menu">
-                  <li><%= link_to 'Profile', '#' %></li>
-                  <li><%= link_to 'Favourites', '#' %></li>
+              <li class="has-dropdown">
+                <a><%= link_to "Your Account", "#"%></a>
+                <ul class="dropdown">
+                  <li><%= link_to "Your Profile", "#" %> </li>
+                  <li><%= link_to "Favourites", "#" %> </li>
                   <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
                 </ul>
               </li>
             <% else %>
-              <li>
-                <%= link_to 'Log In', '#', data: {toggle: 'modal', target: '#logIn'} %>
-              </li>
-              <li class="btn-go"> 
-                <%= link_to 'SIGN UP', '#', data: {toggle: 'modal', target: '#signUp'}%>
-              </li> 
+              <li><%= link_to 'Log In', new_user_session_path%></li>
+              <li> <%= link_to 'Sign Up', new_user_registration_path %></li>
             <% end %>
           </ul>
-        </div>
-      </div>
-    </nav>
-    <!--/ Navigation bar-->
-  <br/>
-  <br/>
-  <br/>
-
-  <!--Modal box Login start-->
-  <div class="modal fade" id="logIn" role="dialog">
-    <div class="modal-dialog modal-sm">
-
-      <!-- Modal content no 1-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title text-center form-title">Login</h4>
-          <button type="button" class="close pull-right" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body padtrbl">
-
-          <div class="login-box-body">
-            <p class="login-box-msg">Log In to keep selling.</p>
-            <div class="form-group">
-              <form name="" id="loginForm">
-                <div class="form-group has-feedback">
-                  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                    <div class="form-inputs">
-                      <%= f.input :login, required: false, autofocus: true, label: "Username or Email Address" %>
-                      <%= f.input :password, required: false %>
-                      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-                    </div>
-                    <div class="form-actions">
-                      <%= f.button :submit, "Log in", class: 'btn btn-green btn-block btn-flat' %>
-                    </div>
-                    <p> New here? <%= render "devise/shared/links" %></p>
-                  <% end %>                
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  <!--/ Modal box Login End-->
-
-  <!--Modal box Sign Up start-->
-  <div class="modal fade" id="signUp" role="dialog">
-    <div class="modal-dialog modal-sm">
-
-      <!-- Modal content no 1-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title text-center form-title">Sign Up</h4>
-        </div>
-        <div class="modal-body padtrbl">
-          <div class="login-box-body">
-            <p class="login-box-msg">Register today to post your ad.</p>
-            <div class="form-group">
-              <form name="" id="loginForm">
-                <div class="form-group has-feedback">
-                <%= form_for(:user, :url => registration_path(:user)) do |f| %>
-                  <%= f.text_field :email, class: 'form-control', placeholder: "Email Address" %>
-                  <%= f.password_field :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),  class: 'form-control', placeholder: "Password" %>
-                  <%= f.password_field :password_confirmation, required: true,  class: 'form-control', placeholder: "Re-enter password" %>
-                  <%= f.check_box :remember_me %>
-                  <%= f.label :remember_me %>
-                  <br />
-                  <br />
-                  <%= f.submit 'Sign in', class: 'btn btn-green btn-block btn-flat' %>
-                  <%= link_to "Forgot your password?", new_password_path(:user) %>
-                <% end %>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  <!--/ Modal box Sign up End-->
-
-      <% if notice.present? %>
-        <p class="notice"><%= notice %></p>
-      <% end %>
-      <% if alert.present? %>
-        <p class="alert"><%= alert %></p>
-      <% end %>
-
-      <%= yield %>
+        </section>
+      </nav>
     </div>
 
 
+    <% if notice.present? %>
+      <p class="alert-box round"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class="alert-box round"><%= alert %></p>
+    <% end %>
 
 
-<!--Footer-->
-<!--  <footer id="footer" class="footer">
-    <div class="container text-center">
-      <%# <ul class="social-links">
-        <li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
-        <li><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
-        <li><a href="#link"><i class="fa fa-google-plus fa-fw"></i></a></li>
-        <li><a href="#link"><i class="fa fa-dribbble fa-fw"></i></a></li>
-        <li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
-      </ul> %>
-      ©2018 Tings Bahamas. All rights reserved.
-      
-    </div>
-  </footer> -->
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
   </body>
 </html>

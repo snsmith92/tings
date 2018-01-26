@@ -1,0 +1,37 @@
+<!--Modal box Sign Up start-->
+<div class="modal fade" id="signUp" role="dialog">
+  <div class="modal-dialog modal-sm">
+
+    <!-- Modal content no 1-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center form-title">Sign Up</h4>
+      </div>
+      <div class="modal-body padtrbl">
+        <div class="login-box-body">
+          <p class="login-box-msg">Register today to post your ad.</p>
+          <div class="form-group">
+            <form name="" id="loginForm">
+              <div class="form-group has-feedback">
+              <%= form_for(:user, :url => registration_path(:user)) do |f| %>
+                <%= f.text_field :email, class: 'form-control', placeholder: "Email Address" %>
+                <%= f.password_field :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),  class: 'form-control', placeholder: "Password" %>
+                <%= f.password_field :password_confirmation, required: true,  class: 'form-control', placeholder: "Re-enter password" %>
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+                <br />
+                <br />
+                <%= f.submit 'Sign in', class: 'btn btn-green btn-block btn-flat' %>
+                <%= link_to "Forgot your password?", new_password_path(:user) %>
+              <% end %>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--/ Modal box Sign up End-->

@@ -12,13 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
-//= require popper
-//= require tether
-//= require bootstrap-sprockets
 //= require_tree .
-//= require bootstrap.min
-//= require cable
-//= require custom
-//= require jquery.easing.min
-//= require jquery.min
+//= require foundation
+$(document).foundation();
+
