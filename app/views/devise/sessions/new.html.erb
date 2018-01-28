@@ -1,4 +1,4 @@
-<div class="sign-in col-4 offset-4">
+<div class="sign-in small-10 small-offset-1 large-4 large-offset-4" id = "sign-up">
   <h2 class="text-center">Log In</h2>
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
@@ -7,10 +7,11 @@
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Log in", class: 'btn btn-primary' %>
+    <div class="form-actions text-center">
+      <%= f.button :submit, "Log in", class: 'button radius expand' %>
     </div>
   <% end %>
   <br />
   <p> New here? <%= render "devise/shared/links" %></p>
 </div>
+

@@ -31,6 +31,12 @@ h1, h2, h3, h4, h5, h6 {
       background-color: #30B1D8;
   }
 
+.button.hollow {
+  border: 1px solid #1779ba;
+  background-color: white;
+  color: #1779ba; 
+}
+
 
 button, .button {
   margin: 0px;
@@ -174,11 +180,11 @@ button, .button {
   color: #fff;
 }
 
-  #additional-info h5 {
-      font-weight: bold;
-  }
+#additional-info h5 {
+  font-weight: bold;
+}
 
-#sign-up {
+#index-search-box {
   padding: 17px 30px 30px 30px;
   background-color: rgb(255,255,255);
   -webkit-border-radius: 4px;
@@ -186,10 +192,22 @@ button, .button {
   border-radius: 4px;
 }
 
-  #sign-up button {
-      width: 100%;
-  }
+#index-search-box button {
+  width: 100%;
+}
 
+#sign-up {
+  padding: 17px 30px 30px 30px;
+  background-color: #ecf0f8;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin: 30px;
+}
+
+#sign-up button {
+  width: 100%;
+}
 
 
 .pricing-table .cta-button {
