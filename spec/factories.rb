@@ -3,6 +3,9 @@ FactoryBot.define do
     sequence :email do |n|
       "dummyEmail#{n}@gmail.com"
     end
+    first_name "John"
+    last_name "Doe"
+    username "johndoetest"
     password "secretPassword"
     password_confirmation "secretPassword"
   end
