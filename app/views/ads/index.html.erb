@@ -3,8 +3,8 @@
   <% @ads.each do |ad| %>
     <div class="ad-index-each large-10 large-offset-1">
       <h2 class= "ad-index-title"><%= ad.title %></h2>
-      <div class="ad-index-price">
-        <%= ad.cost.round(2) %>
+      <div class="badge">
+        <%= sprintf("%.2f", ad.cost) %>
       </div>
       <div class>
         <p><%= ad.description %></p>
