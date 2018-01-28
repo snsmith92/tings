@@ -69,3 +69,6 @@ end
 
 # install foundation gem for front-end framework
 gem 'foundation-rails'
+
+# pagination
+gem 'will_paginate', '~> 3.1.0'

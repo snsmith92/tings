@@ -57,6 +57,9 @@
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "foundation/functions";
 
+// Import google
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
 
@@ -126,7 +129,7 @@ $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 // We use these to control various global styles
 // $body-bg: $white;
 // $body-font-color: $jet;
-// $body-font-family: $font-family-sans-serif;
+// $ body-font-family: $font-family-sans-serif
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 

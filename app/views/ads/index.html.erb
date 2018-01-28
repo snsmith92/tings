@@ -1,18 +1,23 @@
-<div class = "ad-index col-10 offset-1">
-
   <h1>Current Listings</h1>
 
   <% @ads.each do |ad| %>
-    <div class="ad-index-each">
-     <h2 class= "ad-index-title"><%= ad.title %></h2>
-     <div class="ad-index-price">
-       <%= ad.cost %>
-     </div>
-     <div class="col-sm-8 col-12">
-       <%= ad.description %>
-     </div> 
+    <div class="ad-index-each large-10 large-offset-1">
+      <h2 class= "ad-index-title"><%= ad.title %></h2>
+      <div class="ad-index-price">
+        <%= ad.cost %>
+      </div>
+      <div class="col-sm-8 col-12">
+        <%= ad.description %>
+      </div> 
     </div>
+    <br />
   <% end %>
-    
 
-</div >
+<footer>
+  <div class="apple_pagination">
+    <div class="page_info">
+      <%= page_entries_info @posts %>
+    </div>
+    <%= will_paginate @posts, :container => false %>
+  </div>
+</footer>

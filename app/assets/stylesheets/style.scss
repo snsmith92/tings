@@ -1,6 +1,9 @@
-body {
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html, body {
   color: #7d7d7d;
   font-family: 'Open Sans', sans-serif;
+  height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -209,6 +212,12 @@ button, .button {
   width: 100%;
 }
 
+.new-ad {
+  background-color: #ecf0f8;
+  padding: 10px;
+  margin: 30px
+}
+
 
 .pricing-table .cta-button {
   background-color: transparent;
@@ -224,4 +233,43 @@ button, .button {
 
 footer {
   padding: 40px;
+}
+
+.apple_pagination {
+  background: #ecf0f8;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  padding: 1em;
+  cursor: default; }
+  .apple_pagination a, .apple_pagination span {
+    padding: 0.2em 0.3em; }
+  .apple_pagination .disabled {
+    color: #aaaaaa; }
+  .apple_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background-color: #bebebe;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.5;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
+  .apple_pagination a {
+    text-decoration: none;
+    color: black; }
+    .apple_pagination a:hover, .apple_pagination a:focus {
+      text-decoration: underline; }
+
+
+.ad-index-each {
+  background-color: #ecf0f8;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+}
+
+.ad-index-each h2 {
+  font-family: 'Roboto', sans-serif;
 }
