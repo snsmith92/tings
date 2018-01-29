@@ -2,12 +2,13 @@
 
   <% @ads.each do |ad| %>
     <div class="ad-index-each large-10 large-offset-1">
-      <h2 class= "ad-index-title"><%= ad.title %></h2>
-      <div class="badge">
-        <%= sprintf("%.2f", ad.cost) %>
+      <div class = "info">
+        <h2 class= "ad-index-title pull-left"><%= link_to ad.title, ad_path(ad) %></h2> &nbsp; &nbsp;
+        <span class = "index-price">$<%= sprintf("%.2f", ad.cost) %></span>
       </div>
-      <div class>
-        <p><%= ad.description %></p>
+      <hr />
+      <div >
+        <p><%= truncate(ad.description, length: 200)%> <span class ="pull-right"><%= link_to "View Ad", ad_path(ad) %> </span> </p>
       </div> 
     </div>
     <br />
