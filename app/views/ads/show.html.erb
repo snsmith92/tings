@@ -53,8 +53,21 @@
         </div>
       </div>    
     </div>
+    <div>
+      <%= simple_form_for @image, url: ad_images_path(@ad) do |f| %>
+        <%= f.input :caption %>
+        <%= f.input :photos, multiple: true %>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= f.submit "Add Photo", class: 'button' %>
+      <% end %>
+    </div>
   </div>
 </main>
+
+
+
+
+
 
 <script>
 $(document).ready(function(){

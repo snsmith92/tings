@@ -20,6 +20,7 @@ class AdsController < ApplicationController
 
   def show
     @ad = Ad.find_by_id(params[:id])
+    @image = Image.new
     if @ad.blank?
       render plain: "Sorry folks -- no ad to see here!", status: :not_found
     end 

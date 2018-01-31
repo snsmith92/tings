@@ -1,63 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title><%= content_for?(:title) ? yield(:title) : "Tings Bahamas" %></title>
-
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
+    <title>Tings Bahamas</title>
     <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <div class="fixed">  
-      <nav class="top-bar" data-topbar role="navigation">
-        <ul class="title-area">
-          <li class="name">
-            <h1><%= link_to 'Tings Bahamas', root_path %> </h1>
-          </li>
-          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-          <li class="toggle-topbar menu-icon"><a><span></span></a></li>
-        </ul>
 
-        <section class="top-bar-section">
-          <!-- Left Nav Section -->
-          <ul class="left">
-            <li> <%= link_to 'View Listings', ads_path %></li>
-            <li> <%= link_to 'Post An Ad', new_ad_path  %></li>
-          </ul>
-          <!-- Right Nav Section -->
-          <ul class="right">
+    <!-- Navigation -->
+    <nav class="navbar navbar-toggleable-md navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="container">
+        <%= link_to "Tings Bahamas", root_path, class: "navbar-brand"%>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <%= link_to "View Listings", ads_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Post An Ad", new_ad_path, class: 'nav-link'%>
+            </li>
             <% if user_signed_in? %>
-              <li class="has-dropdown">
-                <a><%= link_to "Your Account", "#"%></a>
-                <ul class="dropdown">
-                  <li><%= link_to "Your Profile", "#" %> </li>
-                  <li><%= link_to "Favourites", "#" %> </li>
-                  <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-                </ul>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Your Account
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <%= link_to "Your Profile", '#', class: "dropdown-item" %>
+                  <%= link_to "Favourites", '#', class: "dropdown-item" %>
+                  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                </div>
               </li>
             <% else %>
-              <li><%= link_to 'Log In', new_user_session_path%></li>
-              <li> <%= link_to 'Sign Up', new_user_registration_path %></li>
+              <li class="nav-item">
+                <%= link_to "Log In", new_user_session_path, class: 'nav-link'%>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sign Up", new_user_registration_path, class: 'nav-link'%>
+              </li>
             <% end %>
           </ul>
-        </section>
-      </nav>
-    </div>
+        </div>
+      </div>
+    </nav>
 
 
     <% if notice.present? %>
-      <p class="alert-box round"><%= notice %></p>
+        <p class="notice"><%= notice %></p>
     <% end %>
     <% if alert.present? %>
-      <p class="alert-box round"><%= alert %></p>
+      <p class="alert"><%= alert %></p>
     <% end %>
 
-
     <%= yield %>
-    <%= javascript_include_tag "application" %>
+
+    <!-- Footer -->
+
+
   </body>
 </html>
