@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Catamaran');
 @import url('https://fonts.googleapis.com/css?family=Homemade+Apple');
@@ -114,34 +115,6 @@ header.masthead .bg-circle {
   background: linear-gradient(0deg, #00FFFF 0%, #F7CA18 100%);
 }
 
-header.masthead .bg-circle-1 {
-  height: 90rem;
-  width: 90rem;
-  bottom: -55rem;
-  left: -55rem;
-}
-
-header.masthead .bg-circle-2 {
-  height: 50rem;
-  width: 50rem;
-  top: -25rem;
-  right: -25rem;
-}
-
-header.masthead .bg-circle-3 {
-  height: 20rem;
-  width: 20rem;
-  bottom: -10rem;
-  right: 5%;
-}
-
-header.masthead .bg-circle-4 {
-  height: 30rem;
-  width: 30rem;
-  top: -5rem;
-  right: 35%;
-}
-
 @media (min-width: 992px) {
   header.masthead {
     padding-top: calc(10rem + 55px);
@@ -159,33 +132,33 @@ header.masthead .bg-circle-4 {
   background-color: #ee0979 !important;
 }
 
-.btn-primary {
-  background-color: #ee0979;
-  border-color: #ee0979;
-}
+// .btn-primary {
+//   background-color: #ee0979;
+//   border-color: #ee0979;
+// }
 
-.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-  background-color: #bd0760 !important;
-  border-color: #bd0760 !important;
-}
+// .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+//   background-color: #bd0760 !important;
+//   border-color: #bd0760 !important;
+// }
 
-.btn-primary:focus {
-  box-shadow: 0 0 0 0.2rem rgba(238, 9, 121, 0.5);
-}
+// .btn-primary:focus {
+//   box-shadow: 0 0 0 0.2rem rgba(238, 9, 121, 0.5);
+// }
 
-.btn-secondary {
-  background-color: #ff6a00;
-  border-color: #ff6a00;
-}
+// .btn-secondary {
+//   background-color: #ff6a00;
+//   border-color: #ff6a00;
+// }
 
-.btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover {
-  background-color: #cc5500 !important;
-  border-color: #cc5500 !important;
-}
+// .btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover {
+//   background-color: #cc5500 !important;
+//   border-color: #cc5500 !important;
+// }
 
-.btn-secondary:focus {
-  box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
-}
+// .btn-secondary:focus {
+//   box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
+// }
 
 
 .navbar-custom {
@@ -243,41 +216,12 @@ header.masthead {
       font-size: 2rem;
     }
   }
-  .bg-circle {
-    z-index: 0;
-    position: absolute;
-    border-radius: 100%;
-  }
-  .bg-circle-1 {
-    height: 90rem;
-    width: 90rem;
-    bottom: -55rem;
-    left: -55rem;
-  }
-  .bg-circle-2 {
-    height: 50rem;
-    width: 50rem;
-    top: -25rem;
-    right: -25rem;
-  }
-  .bg-circle-3 {
-    height: 20rem;
-    width: 20rem;
-    bottom: -10rem;
-    right: 5%;
-  }
-  .bg-circle-4 {
-    height: 30rem;
-    width: 30rem;
-    top: -5rem;
-    right: 35%;
-  }
 }
 
 @media (min-width: 992px) {
   header.masthead {
     padding-top: calc(10rem + 55px);
-    padding-bottom: 10rem;
+    padding-bottom: 50px;
     .masthead-content {
       .masthead-heading {
         font-size: 6rem;
@@ -290,8 +234,6 @@ header.masthead {
 }
 
 // Search bar on index page
-
-
 .cntr{
   display:table;
   width:100%;
@@ -303,7 +245,6 @@ header.masthead {
   }
 }
 
-/*** STYLES ***/
 .search {
 	display: inline-block;
 	position: relative;
@@ -352,4 +293,180 @@ header.masthead {
 	}
 }
 
+
+// Log In and Sign Up Pages
+.login-box {
+	background-color: white;
+	max-width: 500px;
+	margin: 0 auto;
+	position: relative;
+	top: 80px;
+	padding: 30px;
+	border-radius: 5px;
+	box-shadow: 0 5px 50px rgba(0,0,0,0.4);
+	text-align: center;
+}
+
+.login-box .box-header {
+	text-transform: uppercase;  
+	margin-top: 0;
+  border-radius: 5px 5px 0 0;
+  font-family: 'Homemade Apple', cursive;
+}
+
+.login-box label {
+	font-weight: 700;
+	font-size: 1em;
+	color: #888;
+	letter-spacing: 1px;
+  line-height: 2em;
+  font-family: 'Catamaran', sans-serif;
+}
+
+.login-box input {
+	margin-bottom: 20px;
+	padding: 8px;
+	border: 2px solid #ccc;
+	border-radius: 25px;
+	font-size: .9em;
+	color: #888;
+}
+
+.login-box input:focus {
+	outline: none;
+  border-color: #00baba;
+	transition: 0.5s;
+	color: #665851;
+}
+
+.login-box .btn {
+ min-width: 100%; 
+ background-color: #00baba;
+ border: 1px solid black;
+ color: white;
+}
+
+.login-box button {
+	margin-top: 0px;
+	border: 0;
+	border-radius: 2px;
+	color: white;
+	padding: 10px;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 0.7em;
+	letter-spacing: 1px;
+	background-color: #665851;
+	cursor:pointer;
+	outline: none;
+}
+
+.login-box button:hover {
+	opacity: 0.7;
+	transition: 0.5s;
+}
+
+.login-box button:hover {
+	opacity: 0.7;
+	transition: 0.5s;
+}
+
+.selected {
+	color: #665851!important;
+	transition: 0.5s;
+}
+
+
+// Sign up box
+.signup-box {
+	background-color: white;
+	margin: 0 auto;
+	position: relative;
+	top: 80px;
+	padding: 30px;
+	border-radius: 5px;
+	box-shadow: 0 5px 50px rgba(0,0,0,0.4);
+	text-align: center;
+}
+
+.signup-box .box-header {
+	text-transform: uppercase;  
+	margin-top: 0;
+  border-radius: 5px 5px 0 0;
+  font-family: 'Homemade Apple', cursive;
+}
+
+.signup-box label {
+	font-weight: 700;
+	font-size: 1em;
+	color: #888;
+	letter-spacing: 1px;
+  line-height: 2em;
+  font-family: 'Catamaran', sans-serif;
+}
+
+.signup-box input {
+	margin-bottom: 10px;
+	padding: 8px;
+	border: 2px solid #ccc;
+	border-radius: 25px;
+	font-size: .9em;
+	color: #888;
+}
+
+.signup-box input:focus {
+	outline: none;
+  border-color: #00baba;
+	transition: 0.5s;
+	color: #665851;
+}
+
+.signup-box .btn {
+ min-width: 100%; 
+ background-color: #00baba;
+ border: 1px solid black;
+ color: white;
+}
+
+.signup-box button {
+	margin-top: 0px;
+	border: 0;
+	border-radius: 2px;
+	color: white;
+	padding: 10px;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 0.7em;
+	letter-spacing: 1px;
+	background-color: #665851;
+	cursor:pointer;
+	outline: none;
+}
+
+.signup-box button:hover {
+	opacity: 0.7;
+	transition: 0.5s;
+}
+
+.signup-box button:hover {
+	opacity: 0.7;
+	transition: 0.5s;
+}
+
+.selected {
+	color: #665851!important;
+	transition: 0.5s;
+}
+
+.form-text {
+  margin-top: 0px;
+}
+
+#emailField {
+  margin-bottom: 5px;
+}
+
+
 // Footer CSS styling
+
+

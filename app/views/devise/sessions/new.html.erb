@@ -1,17 +1,24 @@
-<div class="sign-in small-10 small-offset-1 large-4 large-offset-4" id = "sign-up">
-  <h2 class="text-center">Log In</h2>
+<style>
+  body {background: linear-gradient(0deg, #00FFFF 0%, #F7CA18 100%);}
+</style>
+<br />
+<br />
+<div class="login-box animated fadeInUp">
+  <div class="box-header">
+    <h2>Log In</h2>
+  </div>
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
-      <%= f.input :login, required: false, autofocus: true, label: "Username or Email Address" %>
-      <%= f.input :password, required: false %>
+      <%= f.input :login, required: false, autofocus: true, label: "Username or Email Address", id: "username" %>
+      <%= f.input :password, required: false, id: "password"%>
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
 
     <div class="form-actions text-center">
-      <%= f.button :submit, "Log in", class: 'button radius expand' %>
+      <%= f.button :submit, "Log in", class: 'btn btn-secondary' %>
     </div>
   <% end %>
-  <br />
-  <p> New here? <%= render "devise/shared/links" %></p>
+  <p>New here? <%= render "devise/shared/links" %></p>
 </div>
+
 
