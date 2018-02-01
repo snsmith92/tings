@@ -17,15 +17,15 @@
             <%= ad.title %> <i class="fa fa-angle-right" id = "ad-arrow"></i>
           <% end %>
         </h2>
-        
-        <div class = "index-price badge badge-primary pull-right"> $<%= sprintf("%.2f", ad.cost)%></div>
-        
+        <div class = "index-price badge badge-primary pull-right"> 
+          $<%= sprintf("%.2f", ad.cost)%>
+        </div>
       </div>
       <br />
       <div>
-        
         <br />
-        <p><%= truncate(ad.description, length: 200)%></p>
+        <p><strong><i><%= ad.created_at.strftime("%d %b, %Y") %>.</i></strong>
+        <%= truncate(ad.description, length: 200)%></p>
       </div> 
     </div>
   <% end %>

@@ -1,49 +1,41 @@
-<main class="container product-container">
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+<section class="product-container">
   <div class="row">
     <div class="col-sm-12 col-lg-8">
       <%= image_tag 'bike.jpg', class: 'ad-img' %>
     </div>
     <div class="col-sm-12 col-lg-4">
-      <div class = "product-description">
-        <span><%= link_to "Category", '#' %></span>
+      <div>
+        <span class= "category"><%= link_to "Category", '#' %></span>
+      </div>
+      <!-- Product Title -->
+      <div class="product-overview">
+        <h1><%= @ad.title %> <span class="far fa-heart pull-right" id = 'unliked'></span></h1>
       </div>
       <!-- Product Pricing -->
-      <div class="product-price">
-        <span>$<%= @ad.cost %></span>
-        <%= link_to "Add to Favourites", '#', class: 'save-btn' %>
-      </div> 
+      <div class = "product-price badge badge-primary pull-right"> $<%= sprintf("%.2f", @ad.cost)%></div>
 
-      <!-- Product Description -->
-      <div class="product-description">
-        <h1><%= @ad.title %></h1>
-        <p><%= @ad.description %></p>
-      </div>
-  
-      <!-- Product Configuration -->
-      <div class="product-configuration">
-  
-        <!-- Product Color -->
+      <div>
+        <!-- Seller Info -->
         <div class="seller-info">
-          <span><strong>Seller Info</strong></span>
-          <br />
-          <p>Seller: <%= @ad.user.email %></p>
-          <p>Member Since: <%= @ad.user.created_at.strftime("%d %b, %y")%></p>
+          <h2>Seller Info</h2>
+          <p>Seller: <%= @ad.user.username %></p>
+          <p>Member Since: <%= @ad.user.created_at.strftime("%d %b, %Y")%></p>
           <p>Active Ads: 4 </p>
         </div>
-  
-        <!-- Cable Configuration -->
+        <!-- Seller Contact Info -->
         <div class="seller-contact">
-          <span><strong>Contact Information</strong></span>
-  
+          <h2>Contact Information</h2>
           <div class="seller-contact-info">
             <% if @ad.email.present? %>
-              <span id= "email-target">
-                <button>Show Email</button>
+              <span id= "email-target" class= "btn btn-contact">
+                Show Email
               </span>
             <% end %>
             <% if @ad.phone.present? %>
-              <span id="phone-target">
-                <button>Show Phone Number</button>
+              <span id="phone-target" class = "btn btn-contact">
+                Show Phone Number
               </span>
             <% end %>
             <p id="email"><%= @ad.email %></p>
@@ -53,20 +45,23 @@
         </div>
       </div>    
     </div>
-    <div>
-      <%= simple_form_for @image, url: ad_images_path(@ad) do |f| %>
-        <%= f.input :caption %>
-        <%= f.input :photos, multiple: true %>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <%= f.submit "Add Photo", class: 'button' %>
-      <% end %>
-    </div>
   </div>
-</main>
+</section>
 
+<section class = "ad-description col-10 offset-1">
+  <h2>Product Description</h2>
+  <hr />
+  <p><%= @ad.description %></p>
+</section>
 
-
-
+<!-- <div>
+  <%= simple_form_for @image, url: ad_images_path(@ad) do |f| %>
+    <%= f.input :caption %>
+    <%= f.input :photos, multiple: true %>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <%= f.submit "Add Photo", class: 'button' %>
+  <% end %>
+</div> -->
 
 
 <script>
