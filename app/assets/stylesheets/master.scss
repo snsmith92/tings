@@ -528,6 +528,7 @@ header.masthead {
   color: white;
 }
 
+
 #arrow {
   display: none;
 }
@@ -536,6 +537,72 @@ header.masthead {
   display: inline;
 }
 
-// Footer CSS styling
+// Ad index page styling 
+.ad-index {
+  margin-top: 100px;
+  background-color: rgba(0, 186, 186, 0.2);
+  border-radius: 20px;
+  padding: 20px 10px 10px 20px;
+}
+
+.pagination {
+  margin-bottom: 20px;
+}
+
+.ad-index-each {
+  padding: 10px;
+}
+
+.ad-index-each h2 {
+  font-size: 16px;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 100px;
+  letter-spacing: 1px;
+
+}
+
+.ad-index-each a {
+  text-decoration: none;  
+  color: black;
+}
+
+.ad-index-each a #ad-arrow {
+  display: none;
+}
 
 
+.ad-index-each a:hover #ad-arrow {
+  display: inline;
+}
+
+
+.ad-index-each a:hover {
+  color: #018181;
+}
+
+
+.ad-index-each p {
+  font-size: 12px;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: grey;
+  font-weight: 100px;
+}
+
+.index-price {
+  font-size: 14px;
+}
+
+#unliked {
+  margin-right: 10px;
+}
+
+// pagination
+.paginate-center {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pagination {
+  margin-top: 30px;
+}

@@ -81,3 +81,7 @@ gem 'will_paginate', '~> 3.1.0'
 
 # carrierwave
 gem 'carrierwave', '~> 1.0'
+
+
+#add bootstrap component to will_paginate
+gem 'will_paginate-bootstrap4'
