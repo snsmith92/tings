@@ -20,8 +20,70 @@
   <a href="#description"><i class="fa fa-angle-down fa-5x text-center text-white" aria-hidden="true"></i></a>
 </header>
 
+<br />
+<br />
+	<!-- Banner -->
+	<section>
+    <h1 class="text-center">Commonly Searched Items</h1>
+    <br />
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10 col-md-8 col-lg-4">
+					<div class="content">
+            <%= image_tag 'electronics.jpg', class: "img-fluid" %>
+            <div class = 'content-button'> 
+              <%= link_to '#', class: 'btn btn-content' do %> 
+                <span> Electronics <i class="fa fa-angle-right" id = "arrow"></i></span>
+              <% end %>
+            </div>
+					</div>
+
+					<div class="content">
+						<%= image_tag 'car.jpg', class: "img-fluid" %>
+            <div class = 'content-button'> 
+              <%= link_to '#', class: 'btn btn-content' do %> 
+                <span> Cars <i class="fa fa-angle-right" id = "arrow"></i></span>
+              <% end %>
+            </div>
+					</div>
+				</div>
+
+				<div class="col-sm-10 col-md-8 col-lg-4">
+          <div class="content">
+            <%= image_tag 'furniture.jpg', class: "img-fluid" %>
+            <div class = 'content-button'> 
+              <%= link_to '#', class: 'btn btn-content' do %> 
+                <span> Furniture <i class="fa fa-angle-right" id = "arrow"></i></span>
+              <% end %>
+            </div>
+          </div>					
+
+				</div>
+
+				<div class="col-sm-10 col-md-8 col-lg-4">
+          <div class="content">
+						<%= image_tag 'home.jpg', class: "img-fluid" %>
+            <div class = 'content-button'> 
+              <%= link_to '#', class: 'btn btn-content' do %> 
+                <span> Property &amp; Rentals <i class="fa fa-angle-right" id = "arrow"></i></span>
+              <% end %>
+            </div>
+					</div>
+          <div class="content">
+						<%= image_tag 'service.jpg', class: "img-fluid" %>
+            <div class = 'content-button'> 
+              <%= link_to '#', class: 'btn btn-content' do %> 
+                <span> Services <i class="fa fa-angle-right" id = "arrow"></i></span>
+              <% end %>
+            </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 <a name="description"></a> 
-<section>
+<section class = "why-box">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6 order-lg-1">
@@ -58,7 +120,7 @@
   </div>
 </section>
 
-<section>
+<section class= "why-box">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6 order-lg-1">

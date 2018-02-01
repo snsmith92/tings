@@ -39,7 +39,11 @@ h6 {
   font-weight: 800;
 }
 
-.nav-link a {
+.nav-item :hover {
+  color: #00aaaa;
+}
+
+.navbar-brand :hover {
   color: #00aaaa;
 }
 
@@ -466,6 +470,71 @@ header.masthead {
   margin-bottom: 5px;
 }
 
+
+// Commonly Searched Items Banner
+.bg-white {
+  background-color: #fff !important;
+}
+
+.p-b-40 {
+  padding-bottom: 40px;
+}
+
+.p-t-40 {
+  padding-top: 40px;
+}
+
+
+.hov-img-zoom :hover {
+  width: 100%;
+  -webkit-transition: all 0.6s;
+  -o-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+// Index page css
+.why-box{
+  background-color: #00baba;
+}
+
+.content {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.content-button {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn.btn-content {
+  border: 2px solid #00baba;
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+  text-transform: uppercase;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+
+.btn.btn-content:hover {
+  border: 2px solid #00baba;
+  border-radius: 20px;
+  background-color: rgba(0, 186, 186, 0.7);
+  color: white;
+}
+
+#arrow {
+  display: none;
+}
+
+.btn.btn-content:hover #arrow {
+  display: inline;
+}
 
 // Footer CSS styling
 
