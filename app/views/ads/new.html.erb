@@ -1,16 +1,19 @@
-<div class="new-ad small-10 small-offset-1 large-8 large-offset-2"> 
-  <h1>Create A New Ad</h1>
+<style>
+  body {background-color:rgba(255, 242, 191, 0.7);}
+</style>
+<div class="ad-index col-8 offset-2"> 
+  <h1 class= "text-center">Create A New Ad</h1>
 
   <%= simple_form_for @ad, url: ads_path do |f| %>
-    <%= f.input :title, label: "Ad Title", placeholder: "Honda Civic 2007" %>
-    <%= f.input :cost, label: "Price", placeholder: "$" %>
-    <%= f.input :description, label: "Description" %>
-    <%= f.input :quantity %>
-    <%= f.input :phone, label: "Phone Number", placeholder:"242-555-5555" %>
-    <%= f.input :email, label: "Email Address", placeholder: "me@tingsbahamas.com" %>
+    <%= f.input :title, label: false, placeholder: "Item/Service for Sale" %>
+    <%= f.input :cost, label: false, placeholder: "Price" %>
+    <%= f.input :description, label: false, placeholder: "Description" %>
+    <%= f.input :quantity, label: false, placeholder: "Quantity Available" %>
+    <%= f.input :phone, label: false, placeholder:"Phone Contact" %>
+    <%= f.input :email, label: false, placeholder: "Email Contact" %>
     <%= f.input :accepted, label: "By clicking this checkbox, I agree to the Terms and Conditions." %>
     <br />
-    <%= f.submit "Post Ad", class: 'button' %>
-    <br />
+    <%= f.submit "Post Ad", class: 'btn btn-lg btn-content' %>
   <% end %>
+  <br />
 </div>
