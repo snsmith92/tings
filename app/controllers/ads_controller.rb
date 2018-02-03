@@ -1,5 +1,6 @@
 class AdsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]  
+
   def index
     @ads = Ad.paginate(:page => params[:page], :per_page => 10)
   end 
@@ -11,6 +12,7 @@ class AdsController < ApplicationController
   def create
     @ad = current_user.ads.create(ad_params)
     if @ad.valid?
+      flash[:notice] = "Ad created successfully"
       redirect_to ad_path(@ad)
     else
       render :new, status: :unprocessable_entity
@@ -27,6 +29,6 @@ class AdsController < ApplicationController
   private
 
   def ad_params
-    params.require(:ad).permit(:title, :cost, :description, :quantity, :phone, :email, :accepted)
+    params.require(:ad).permit(:title, :cost, :description, :quantity, :phone, :email, :accepted, :category_id)
   end 
 end

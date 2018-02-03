@@ -5,6 +5,5 @@ class Ad < ApplicationRecord
   validates :accepted, presence: true
 
   belongs_to :user
-  has_many :photos
   belongs_to :category
 end

@@ -6,6 +6,7 @@
 
   <%= simple_form_for @category, url: categories_path do |f| %>
     <%= f.input :name, label: false, placeholder: "Category Name" %>
+    <%= f.input :parent, label: false, placeholder: "Parent category" %>
     
     <%= f.submit "Add Category", class: 'btn btn-lg btn-content' %>    
   <% end %>

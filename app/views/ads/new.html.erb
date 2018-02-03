@@ -6,7 +6,7 @@
 
   <%= simple_form_for @ad, url: ads_path do |f| %>
     <%= f.input :title, label: false, placeholder: "Item/Service for Sale" %>
-    <%= f.select :parent_id, @categories %>
+    <%= f.association :category, label: false, placeholder: "Select a Category", label_method: :name, value_method: :id %>
     <%= f.input :cost, label: false, placeholder: "Price" %>
     <%= f.input :description, label: false, placeholder: "Description" %>
     <%= f.input :quantity, label: false, placeholder: "Quantity Available" %>
