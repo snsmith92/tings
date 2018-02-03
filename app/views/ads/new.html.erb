@@ -6,6 +6,7 @@
 
   <%= simple_form_for @ad, url: ads_path do |f| %>
     <%= f.input :title, label: false, placeholder: "Item/Service for Sale" %>
+    <%= f.select :parent_id, @categories %>
     <%= f.input :cost, label: false, placeholder: "Price" %>
     <%= f.input :description, label: false, placeholder: "Description" %>
     <%= f.input :quantity, label: false, placeholder: "Quantity Available" %>
@@ -13,7 +14,9 @@
     <%= f.input :email, label: false, placeholder: "Email Contact" %>
     <%= f.input :accepted, label: "By clicking this checkbox, I agree to the Terms and Conditions." %>
     <br />
-    <%= f.submit "Post Ad", class: 'btn btn-lg btn-content' %>
+
+    <br />
+    <%= f.submit "Post Ad", class: 'btn btn-lg btn-content' %>    
   <% end %>
   <br />
 </div>

@@ -1,0 +1,13 @@
+<style>
+  body {background-color:rgba(255, 242, 191, 0.7);}
+</style>
+<div class="ad-index col-8 offset-2"> 
+  <h1 class= "text-center">Add A Category</h1>
+
+  <%= simple_form_for @category, url: categories_path do |f| %>
+    <%= f.input :name, label: false, placeholder: "Category Name" %>
+    
+    <%= f.submit "Add Category", class: 'btn btn-lg btn-content' %>    
+  <% end %>
+  <br />
+</div>
