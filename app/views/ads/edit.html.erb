@@ -2,11 +2,11 @@
   body {background-color:rgba(255, 242, 191, 0.7);}
 </style>
 <div class="ad-index col-8 offset-2"> 
-  <h1 class= "text-center">Create A New Ad</h1>
+  <h1 class= "text-center">Edit Your Ad</h1>
 
   <%= simple_form_for @ad, url: ads_path do |f| %>
     <%= f.input :title, label: false, placeholder: "Item/Service for Sale" %>
-    <%= f.association :category, label: false, prompt: "Select a Category", label_method: :name, value_method: :id, disabled: Category.disable_options %>
+    <%= f.association :category, label: false, prompt: "Select a Category", label_method: :name, value_method: :id %>
     <%= f.input :cost, label: false, placeholder: "Price" %>
     <%= f.input :description, label: false, placeholder: "Description" %>
     <%= f.input :quantity, label: false, placeholder: "Quantity Available" %>
@@ -16,7 +16,7 @@
     <br />
 
     <br />
-    <%= f.submit "Post Ad", class: 'btn btn-lg btn-content' %>    
+    <%= f.submit "Update", class: 'btn btn-lg btn-content' %>    
   <% end %>
   <br />
 </div>
