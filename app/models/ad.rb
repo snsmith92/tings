@@ -6,4 +6,9 @@ class Ad < ApplicationRecord
 
   belongs_to :user
   belongs_to :category
+
+  def time_created
+    created_at.strftime("%d %b, %Y")
+  end 
 end
+

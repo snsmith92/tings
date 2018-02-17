@@ -16,5 +16,9 @@ module Tingsbahamas
 
     # Precompile additional assets
     config.assets.precompile += %w( .svg .eot .woff .ttf )
+    
+    # Access presenters 
+    config.paths.add File.join('app', 'presenters'), glob: File.join('**', '*.rb')
+    config.autoload_paths += Dir[Rails.root.join('app', 'presenters', '*')]
   end
 end

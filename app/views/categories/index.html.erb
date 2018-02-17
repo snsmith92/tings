@@ -1,0 +1,22 @@
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+<style>
+  body {background-color:rgba(255, 242, 191, 0.7);}
+</style>
+
+<div class = "ad-index col-8 offset-2">
+  <h1 class= "text-center color-pink">Categories</h1>
+  <br/>
+  <div class="container">
+    <div class="row">
+      <% @categories.each do |category| %>
+        <div class = "col-md-4">
+          <%= link_to '#' do %>
+            <p><%= category.name %> <i class="fa fa-angle-right" id = "ad-arrow"></i></p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div >
+
+</div>

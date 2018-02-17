@@ -11,4 +11,9 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  def set_categories_main
+    Category.where(ancestry: nil)
+  end
+
 end
