@@ -1,5 +1,5 @@
 class AdsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]  
+  before_action :authenticate_user!, only: [:new, :create, :update]  
 
   def index
     @ads = Ad.paginate(:page => params[:page], :per_page => 10)
@@ -23,6 +23,14 @@ class AdsController < ApplicationController
     @ad = Ad.find_by_id(params[:id])
     if @ad.blank?
       render plain: "Sorry folks -- no ad to see here!", status: :not_found
+    end 
+  end
+
+  def update
+    @ad = Ad.find(params[:id])
+
+    if @ad.user =! current_user
+      return render text: "This action is not allowed", status: :forbidden
     end 
   end
 

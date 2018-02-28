@@ -60,12 +60,14 @@ h6 {
 }
 
 .dropdown-menu {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color:white;
+  width: 300px !important;
 }
 
 .dropdown-menu a {
-  color: white;
+  color: black;
   text-decoration: none;
+  text-transform: capitalize;
 }
 
 .navbar-custom {
@@ -746,3 +748,8 @@ header.masthead {
 .ad-description h2 {
   font-size: 20px;
 }
+
+
+input[type="button" i]:disabled, input[type="submit" i]:disabled, input[type="reset" i]:disabled, input[type="file" i]:disabled::-webkit-file-upload-button, button:disabled, select:disabled, optgroup:disabled, option:disabled, select[disabled] > option {
+    color: black;
+} 

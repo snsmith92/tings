@@ -1,0 +1,41 @@
+<div class = "ad-index col-8 offset-2">
+  <h1 class = "text-center"><%= @category.name %></h1>
+  <hr />
+  <h5 class = "text-center">Choose a Subcategory </h5>
+  <div class="container">
+    <div class="row">
+      <% @subcategory.each do |subcategory| %>
+        <div class = "col-md-4 text-center">
+          <%= link_to category_path(subcategory) do %>
+            <p><%= subcategory.name %> <i class="fa fa-angle-right" id = "ad-arrow"></i></p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <% @ads.each do |ad| %>
+    <hr />
+    <div class="ad-index-each">
+      <div class = "info">
+        <i class="far fa-heart pull-left" id = 'unliked'></i> 
+        <h2 class= "ad-index-title pull-left">
+          <%= link_to ad_path(ad) do %>
+            <%= ad.title %> <i class="fa fa-angle-right" id = "ad-arrow"></i>
+          <% end %>
+        </h2>
+        <div class = "index-price badge badge-primary pull-right"> 
+          $<%= sprintf("%.2f", ad.cost)%>
+        </div>
+      </div>
+      <br />
+      <div>
+        <br />
+        <p><strong><i><%= ad.time_created %>.</i></strong>
+        <%= truncate(ad.description, length: 200)%></p>
+      </div> 
+    </div>
+  <% end %>
+
+  </div>
+</div>

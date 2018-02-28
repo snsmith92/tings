@@ -1,0 +1,10 @@
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+<style>
+  body {background-color:rgba(255, 242, 191, 0.7);}
+</style>
+
+<% if @category.ancestry %>
+  <%= render "child" %>
+<% else %>
+  <%= render "parent" %>
+<% end %>

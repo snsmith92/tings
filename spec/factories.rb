@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :favourite do
+    
+  end
   factory :category do
     
   end

@@ -15,6 +15,9 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.friendly.find(params[:id])
+    @subcategory = @category.children
+    subcategory_ids = @category.child_ids
+    @ads = Ad.where(category_id: subcategory_ids)
   end 
 
   private
