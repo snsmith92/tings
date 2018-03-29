@@ -58,9 +58,6 @@ gem "font-awesome-rails"
 # Add simple form gem
 gem 'simple_form'
 
-# Add devise gem
-gem 'devise'
-
 # Add rspec for automated testing
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
