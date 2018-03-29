@@ -38,6 +38,27 @@
             <li class="nav-item">
               <%= link_to "Post An Ad", new_ad_path, class: 'nav-link'%>
             </li>
+            <% if user_signed_in? %>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Your Account
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <%= link_to "Your Profile", '#', class: "dropdown-item" %>
+                  <%= link_to "Favourites", '#', class: "dropdown-item" %>
+                  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                </div>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Log In", new_user_session_path, class: 'nav-link'%>
+              </li>
+              <li class="nav-item">
+                <%= link_to new_user_registration_path, class: 'btn btn-content nav-link' do %> 
+                  <span> Sign Up <i class="fa fa-angle-right" id = "arrow"></i></span>
+                <% end %>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>
