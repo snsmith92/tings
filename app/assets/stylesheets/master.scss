@@ -601,7 +601,13 @@ header.masthead {
   font-size: 14px;
 }
 
-#unliked {
+.liked {
+  color: red;
+  margin-right: 10px;
+}
+
+.unliked {
+  color: white;
   margin-right: 10px;
 }
 
