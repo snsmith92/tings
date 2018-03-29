@@ -45,7 +45,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <%= link_to "Your Profile", '#', class: "dropdown-item" %>
-                  <%= link_to "Favourites", '#', class: "dropdown-item" %>
+                  <%= link_to "Favourites", favourites_path, class: "dropdown-item" %>
                   <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                 </div>
               </li>

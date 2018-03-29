@@ -96,3 +96,6 @@ gem 'record_tag_helper','~> 1.0'
 
 # Devise user authentication
 gem 'devise'
+
+# Add jquery
+gem 'jquery-ui-rails'

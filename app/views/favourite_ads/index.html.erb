@@ -4,9 +4,8 @@
 </style>
 
 <div class = "ad-index col-8 offset-2">
-  <h1 class= "text-center color-pink">Current Listings</h1>
+  <h1 class= "text-center color-pink">Your Favourites</h1>
   <br/>
-
   <% @ads.each do |ad| %>
     <hr />
     <div class="ad-index-each">
@@ -37,22 +36,4 @@
       </div> 
     </div>
   <% end %>
-</div >
-
-<ul class = "pagination pagination-sm paginate-center">
-  <%= will_paginate @collection, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
-</ul>
-
-
-<script>
-  $("#favourite-button").click(function () {
-    alert("Hi");
-
-  $.ajax({
-    type: 'PUT',
-    url: '/users/' + user_id + '/favourites/',
-    dataType: 'json',
-    data: { favourite: {ad_id: ad_id, user_id: user_id} },
-    });
-  });
-</script>
+</div>
