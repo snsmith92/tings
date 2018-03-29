@@ -93,3 +93,6 @@ gem 'friendly_id', '~> 5.1.0'
 
 # RecordTagHelper upgrade
 gem 'record_tag_helper','~> 1.0'
+
+# Devise user authentication
+gem 'devise'
