@@ -48,7 +48,6 @@ RSpec.describe AdsController, type: :controller do
         phone: "",
         email: "",
         accepted: nil  } }
-
       expect(response).to have_http_status(:unprocessable_entity)
       expect(Ad.count).to eq 0
     end 
