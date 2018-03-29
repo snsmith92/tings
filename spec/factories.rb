@@ -1,7 +1,4 @@
 FactoryBot.define do
-  factory :user do
-    
-  end
   factory :favourite do
     
   end
@@ -11,16 +8,13 @@ FactoryBot.define do
   factory :photo do
     
   end
-  # factory :user do
-  #   sequence :email do |n|
-  #     "dummyEmail#{n}@gmail.com"
-  #   end
-  #   first_name "John"
-  #   last_name "Doe"
-  #   username "johndoetest"
-  #   password "secretPassword"
-  #   password_confirmation "secretPassword"
-  # end
+  factory :user do
+    sequence :email do |n|
+      "dummyEmail#{n}@gmail.com"
+    end
+    password "secretPassword"
+    password_confirmation "secretPassword"
+  end
 
   factory :ad do
     title "Car for sale"
