@@ -1,6 +1,5 @@
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
-
 <div class = "ad-index col-8 offset-2">
   <h1 class= "text-center color-pink">Current Listings</h1>
   <br/>
@@ -9,13 +8,15 @@
     <hr />
     <div class="ad-index-each">
       <div class = "info">
-        <% unless current_user.favourite_ads.exists?(id: ad.id) %>
-          <%= link_to favourite_ads_path(ad_id: ad.id), method: :post do %>
-            <i class="fas fa-heart pull-left unliked"></i> 
-          <% end %>
-        <% else %>
-          <%= link_to favourite_ad_path(ad), method: :delete do %>
-            <i class="fas fa-heart pull-left liked"></i> 
+        <% if user_signed_in? %>
+          <% unless current_user.favourite_ads.exists?(id: ad.id) %>
+            <%= link_to favourite_ads_path(ad_id: ad.id), method: :post do %>
+              <i class="fas fa-heart pull-left unliked"></i> 
+            <% end %>
+          <% else %>
+            <%= link_to favourite_ad_path(ad), method: :delete do %>
+              <i class="fas fa-heart pull-left liked"></i> 
+            <% end %>
           <% end %>
         <% end %>
         <h2 class= "ad-index-title pull-left">
@@ -53,4 +54,20 @@
     data: { favourite: {ad_id: ad_id, user_id: user_id} },
     });
   });
+</script>
+
+<script>
+  $(function() {
+    $(window).ready(function(){
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 50) {
+          $('.navbar-custom').addClass('changeNavbarColor')
+        }
+        if ($(this).scrollTop() < 50) {
+          $('.navbar-custom').removeClass('changeNavbarColor')
+        }
+      });
+    });
+  });
+
 </script>
