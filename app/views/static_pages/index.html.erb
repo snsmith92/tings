@@ -1,9 +1,10 @@
-<header class="masthead text-center text-white">
+<header class="masthead text-black">
   <div class="masthead-content">
     <div class="container">
-      <h1 class="masthead-heading mb-0">Your Online Classifieds</h1>
+      <h1 class="masthead-heading mb-0">Your Online Classifieds.</h1>
       <br />
       <h2 class="masthead-subheading mb-0">The only online seller platform designed for the Bahamas.</h2>
+      <br />
       <br />
       <div class="cntr">
         <div class="cntr-innr">
@@ -15,130 +16,141 @@
       <!-- <%= link_to 'Start Search', '#', class: "btn btn-primary btn-xl rounded-pill mt-5" %> -->
     </div>
   </div>
-  <br />
-  <br />
-  <a href="#description"><i class="fa fa-angle-down fa-5x text-center text-white" aria-hidden="true"></i></a>
 </header>
 
 <br />
 <br />
-	<!-- Banner -->
-	<section>
-    <h1 class="text-center">Commonly Searched Items</h1>
-    <br />
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 col-md-8 col-lg-4">
-					<div class="content">
-            <%= image_tag 'electronics.jpg', class: "img-fluid" %>
-            <div class = 'content-button'> 
-              <%= link_to '#', class: 'btn btn-content' do %> 
-                <span> Electronics <i class="fa fa-angle-right" id = "arrow"></i></span>
-              <% end %>
-            </div>
-					</div>
-
-					<div class="content">
-						<%= image_tag 'car.jpg', class: "img-fluid" %>
-            <div class = 'content-button'> 
-              <%= link_to '#', class: 'btn btn-content' do %> 
-                <span> Cars <i class="fa fa-angle-right" id = "arrow"></i></span>
-              <% end %>
-            </div>
-					</div>
-				</div>
-
-				<div class="col-sm-12 col-md-8 col-lg-4">
-          <div class="content">
-            <%= image_tag 'furniture.jpg', class: "img-fluid" %>
-            <div class = 'content-button'> 
-              <%= link_to '#', class: 'btn btn-content' do %> 
-                <span> Furniture <i class="fa fa-angle-right" id = "arrow"></i></span>
-              <% end %>
-            </div>
-          </div>					
-
-				</div>
-
-				<div class="col-sm-12 col-md-8 col-lg-4">
-          <div class="content">
-						<%= image_tag 'home.jpg', class: "img-fluid" %>
-            <div class = 'content-button'> 
-              <%= link_to '#', class: 'btn btn-content' do %> 
-                <span> Property &amp; Rentals <i class="fa fa-angle-right" id = "arrow"></i></span>
-              <% end %>
-            </div>
-					</div>
-          <div class="content">
-						<%= image_tag 'service.jpg', class: "img-fluid" %>
-            <div class = 'content-button'> 
-              <%= link_to '#', class: 'btn btn-content' do %> 
-                <span> Services <i class="fa fa-angle-right" id = "arrow"></i></span>
-              <% end %>
-            </div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-<a name="description"></a> 
-<section class = "why-box">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6 order-lg-1">
-        <div class="p-5">
-          <h2 class="display-4">Fast and Easy Search</h2>
-          <p>With goods and services classified in 12+ categories, it's easier than ever to find exactly what you are looking for. See something you like? Save it for later! Save an ad to your Favourites List to access it quickly later on. </p>
-        </div>
-      </div>
-      <div class="col-lg-6 order-lg-2">
-        <div class="p-5">
-          <%= image_tag 'search.jpg', class: "img-fluid rounded-circle" %>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
-
+<!-- Banner -->
 <section>
+  <h1 class="text-center">Commonly Searched Items</h1>
+  <br />
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <div class="p-5">
-          <%= image_tag '02.jpg', class: "img-fluid rounded-circle" %>
+    <div class="row">
+      <div class="col-sm-12 col-md-8 col-lg-4">
+        <div class="content">
+          <%= image_tag 'electronics.jpg', class: "img-fluid" %>
+          <div class = 'content-button'> 
+            <%= link_to category_path(id: "electronics"), class: 'btn btn-content' do %> 
+              <span> Electronics <i class="fa fa-angle-right" id = "arrow"></i></span>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="content">
+          <%= image_tag 'car.jpg', class: "img-fluid" %>
+          <div class = 'content-button'> 
+            <%= link_to category_path(id: "vehicles"), class: 'btn btn-content' do %> 
+              <span> Cars <i class="fa fa-angle-right" id = "arrow"></i></span>
+            <% end %>
+          </div>
         </div>
       </div>
-      <div class="col-lg-6">
-        <div class="p-5">
-          <h2 class="display-4">Follow A Search</h2>
-          <p>Looking for a microwave? Perhaps a car? Click 'follow' on your search to be notified as soon as someone posts an item you are looking for.</p>
+
+      <div class="col-sm-12 col-md-8 col-lg-4">
+        <div class="content">
+          <%= image_tag 'furniture.jpg', class: "img-fluid" %>
+          <div class = 'content-button'> 
+            <%= link_to category_path(id: "furniture"), class: 'btn btn-content' do %> 
+              <span> Furniture <i class="fa fa-angle-right" id = "arrow"></i></span>
+            <% end %>
+          </div>
+        </div>					
+
+      </div>
+
+      <div class="col-sm-12 col-md-8 col-lg-4">
+        <div class="content">
+          <%= image_tag 'home.jpg', class: "img-fluid" %>
+          <div class = 'content-button'> 
+            <%= link_to category_path(id: "properties-rentals"), class: 'btn btn-content' do %> 
+              <span> Property &amp; Rentals <i class="fa fa-angle-right" id = "arrow"></i></span>
+            <% end %>
+          </div>
+        </div>
+        <div class="content">
+          <%= image_tag 'service.jpg', class: "img-fluid" %>
+          <div class = 'content-button'> 
+            <%= link_to category_path(id: "services"), class: 'btn btn-content' do %> 
+              <span> Services <i class="fa fa-angle-right" id = "arrow"></i></span>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<section class= "why-box">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6 order-lg-1">
-        <div class="p-5">
-          <h2 class="display-4">Find your buyer fast!</h2>
-          <p>With all of our features, your customers can find you quicker and easier than anywhere else on the web!</p>
+<hr />
+<section>
+  <!-- Carousel start -->
+  <div id="carouselExampleIndicators" class="carousel slide col-10 offset-1" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag 'search.jpg', class: "d-block w-100 img-fluid" %>
+        <div class = "carousel-caption d-none d-md-block">
+          With goods and services classified in 12+ categories, it's easier than ever to find exactly what you are looking for. See something you like? Save it for later! Save an ad to your Favourites List to access it quickly later on.
         </div>
       </div>
-      <div class="col-lg-6 order-lg-2">
-        <div class="p-5">
-          <%= image_tag '03.jpg', class: "img-fluid rounded-circle" %>
+      <div class="carousel-item">
+        <%= image_tag 'search.jpg', class: "d-block w-100 img-fluid" %>
+        <div class = "carousel-caption d-none d-md-block">
+          Looking for a microwave? Perhaps a car? Click 'follow' on your search to be notified as soon as someone posts an item you are looking for.
         </div>
       </div>
-      
+      <div class="carousel-item">
+        <%= image_tag 'search.jpg', class: "d-block w-100 img-fluid" %>
+        <div class = "carousel-caption d-none d-md-block">
+          With all of our features, your customers can find you quicker and easier than anywhere else on the web!
+        </div>
+      </div>
     </div>
   </div>
 </section>
+<br />
+<br />
 
+<!-- Footer -->
+<footer>
+  <div class="section-container footer-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h4>About us</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet consectetur dolor</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Do you like ? Share this !</h4>
+          <p>
+            <a href="https://facebook.com/" class="social-round-icon white-round-icon fa-icon" title="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="https://twitter.com/" class="social-round-icon white-round-icon fa-icon" title="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/" class="social-round-icon white-round-icon fa-icon" title="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </p> 
+        </div>
+        <div class="col-md-4">
+          <h4>Subscribe to newsletter</h4>
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" class="form-control footer-input-text">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-primary btn-newsletter ">OK</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 <script>
   $("#inpt_search").on('focus', function () {
     $(this).parent('label').addClass('active');
@@ -148,4 +160,18 @@
     if($(this).val().length == 0)
       $(this).parent('label').removeClass('active');
   });
+
+  $(function() {
+    $(window).ready(function(){
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+          $('.navbar-custom').addClass('changeNavbarColor')
+        }
+        if ($(this).scrollTop() < 50) {
+          $('.navbar-custom').removeClass('changeNavbarColor')
+        }
+      });
+    });
+  });
+
 </script>

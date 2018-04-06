@@ -2,7 +2,12 @@ class FavouriteAdsController < ApplicationController
   before_action :set_ad, only: [:create, :destroy]
 
   def index
-    @ads = current_user.favourite_ads
+    if user_signed_in?
+      @ads = current_user.favourite_ads
+    else
+      redirect_to new_user_session_path
+      flash[:alert] = 'You must sign in to view your favourites.'
+    end 
   end 
 
   def create
