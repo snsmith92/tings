@@ -827,3 +827,13 @@ footer {
 .footer-container .email-container {
   padding: 10px 0px 0px 0px;
 }
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
