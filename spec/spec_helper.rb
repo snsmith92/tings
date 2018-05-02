@@ -75,19 +75,19 @@ RSpec.configure do |config|
     end
   end
 # Delete indexes for all elastic searchable models to ensure clean state between tests
-  config.after :each, elasticsearch: true do
-    ActiveRecord::Base.descendants.each do |model|
-      if model.respond_to?(:__elasticsearch__)
-        begin
-          model.__elasticsearch__.delete_index!
-        rescue => Elasticsearch::Transport::Transport::Errors::NotFound
-          # This kills "Index does not exist" errors being written to console
-        rescue => e
-          STDERR.puts "There was an error removing the elasticsearch index for #{model.name}: #{e.inspect}"
-        end
-      end
-    end
-  end
+  # config.after :each, elasticsearch: true do
+  #   ActiveRecord::Base.descendants.each do |model|
+  #     if model.respond_to?(:__elasticsearch__)
+  #       begin
+  #         model.__elasticsearch__.delete_index!
+  #       rescue => Elasticsearch::Transport::Transport::Errors::NotFound
+  #         # This kills "Index does not exist" errors being written to console
+  #       rescue => e
+  #         STDERR.puts "There was an error removing the elasticsearch index for #{model.name}: #{e.inspect}"
+  #       end
+  #     end
+  #   end
+  # end
 
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
