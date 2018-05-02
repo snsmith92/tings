@@ -96,3 +96,14 @@ gem 'record_tag_helper','~> 1.0'
 
 # Devise user authentication
 gem 'devise'
+
+# Elasticsearch integration
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
+group :test do
+  # Clean Database between tests
+  gem 'database_cleaner'
+  # Programmatically start and stop ES for tests
+  gem 'elasticsearch-extensions'
+end
